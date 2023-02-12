@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir -p build && cd build && cmake .. && make && cd ..
+mkdir -p bin && gcc -Wall -Werror src/main.c -o bin/cliloc

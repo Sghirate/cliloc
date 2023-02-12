@@ -9,6 +9,4 @@ Note, this tool has only be build and tested on a Linux system, with GCC 12. Oth
 
 # Building
 
-You should be good to go as long as you have **CMake** and a **C compiler** (for example gcc). With that in place the build.sh file should run everything that is needed:
-
-``mkdir -p build && cd build && cmake .. && make && cd ..``
+On a Linux system with gcc installed build.sh will do everything you need (``mkdir -p bin && gcc -Wall -Werror src/main.c -o bin/cliloc``).

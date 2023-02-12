@@ -280,7 +280,6 @@ int csv_to_cliloc(const char* a_input, const char* a_output) {
             result = -1;
         }
     }
-    int iLine = 0;
     // read input file line by line and write
     if (result == 0) {
         char *line = NULL;
@@ -387,14 +386,17 @@ int main(int a_argc, char* a_argv[]) {
 
     int typeFrom = get_file_type(input);
     int typeTo = get_file_type(output);
-    int validFileTypes = 0;
+    int filesValid = 0;
     if (typeFrom == FILE_UNKNOWN) {
         fprintf(stderr, "Unknown input file type!\n");
-        validFileTypes = -1;
+        filesValid = -1;
     }
     if (typeTo == FILE_UNKNOWN) {
         fprintf(stderr, "Unknown output file type!\n");
-        validFileTypes = -1;
+        filesValid = -1;
+    }
+    if (filesValid != 0) {
+        return -1;
     }
 
     if (typeFrom == FILE_CLILOC && typeTo == FILE_CSV) {
