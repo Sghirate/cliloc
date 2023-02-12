@@ -159,7 +159,7 @@ int cliloc_to_csv(const char* a_input, const char* a_output) {
     if (result == 0) {
         fTmp = tmpfile();
         if (!fTmp) {
-            fprintf(stderr, "Could not temporary file stream!\n");
+            fprintf(stderr, "Could not open temporary file stream!\n");
             result = -1;
         }
     }
@@ -268,7 +268,7 @@ int csv_to_cliloc(const char* a_input, const char* a_output) {
     if (result == 0) {
         fTmp = tmpfile();
         if (!fTmp) {
-            fprintf(stderr, "Could not temporary file stream!\n");
+            fprintf(stderr, "Could not open temporary file stream!\n");
             result = -1;
         }
     }
